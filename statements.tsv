@@ -1,0 +1,27 @@
+A is a point.	point_A
+O is a point.	point_O
+A point exists.	point_X
+Point A exists.	point_A
+Point B exists.	point_B
+There is a point.	point_X
+There exists a point.	point_X
+A and B are two points.	points_A_B
+AB is a straight line.	line_AB
+A and B are two points connected by a line.	line_AB
+A and B are two points connected by a straight line.	line_AB
+O and P are two points connected by a line.	line_OP
+O and P are two points connected by a straight line.	line_OP
+Shortest path betwen 2 points is the straignt line connecting them.	line_AB
+A, B and C are three points.	points_A_B_C
+Atleast 3 points are needed to form a triangle.	triangle_ABC
+Atleast 3 points are required to form a triangle.	triangle_ABC
+A triangle is a polygon having 3 sides.	triangle_ABC
+ABC is a triangle.	triangle_ABC
+ABC is a polygon with 3 sides.	triangle_ABC
+ABC is a polygon having 3 sides.	triangle_ABC
+ABC is a 3-sided polygon.	triangle_ABC
+A, O and B are collinear points.	line_AOB
+O is a point on a straignt line AB.	line_AOB
+The 2 starignt lines AB and CD cross one another at point O.
+The 2 starignt lines AB and CD intersect at point O.
+Angles AOB and BOC have a common arm OB.

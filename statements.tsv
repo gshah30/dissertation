@@ -24,4 +24,5 @@ A, O and B are collinear points.	line_AOB
 O is a point on a straignt line AB.	line_AOB
 The 2 staright lines AB and CD cross one another at point O.	lines_AB_CD
 The 2 staright lines AB and CD intersect at point O.	lines_AB_CD
-Angles AOB and BOC have a common arm OB.
+Angles AOB and BOC have a common arm OB.	angles_AOB_BOC
+Angle AOB and angle BOC are adjacent angles.	angles_AOB_BOC

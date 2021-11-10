@@ -40,6 +40,7 @@ void draw_random_point(string s) {
   draw_point(p, s);
 }
 
+// Lines
 line get_line(pair p1, pair p2) {
   return line(p1, true, p2, true);
 }
@@ -69,6 +70,24 @@ void draw_random_line(string s1, string s2) {
   line l = get_line(loc1, loc2);
 
   draw_line(l, s1, s2);
+}
+
+line get_line_segment(point p1, point p2) {
+  return segment(p1, p2);
+}
+
+void draw_line_segment(segment ls, string s1 = "", string s2 = "") {
+  draw(ls);
+  draw_point(ls.A, s1);
+  draw_point(ls.B, s2);
+}
+
+void draw_line_segment(point p1, point p2, string s1 = "", string s2 = "") {
+  segment ls = get_line_segment(p1, p2);
+
+  draw(ls);
+  draw_point(ls.A, s1);
+  draw_point(ls.B, s2);
 }
 
 point[] get_collinear_points(point ep1, point ep2, int n = 1, string placement = "middle") {

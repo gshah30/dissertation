@@ -1,6 +1,6 @@
 import setup;
 
-line l = get_random_line();
+line l = get_line();
 point[] ps = get_collinear_points(l.A, l.B, 1);
 
 string names[] = {"A", "O", "B"};

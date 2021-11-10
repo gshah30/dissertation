@@ -1,4 +1,4 @@
-import setup;
+import utils;
 
 line l1 = get_line();
 point[] ps = get_collinear_points(l1.A, l1.B, 1);

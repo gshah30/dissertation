@@ -11,18 +11,306 @@ A and B are two points connected by a line.	line_AB
 A and B are two points connected by a straight line.	line_AB
 O and P are two points connected by a line.	line_OP
 O and P are two points connected by a straight line.	line_OP
-Shortest path betwen 2 points is the straignt line connecting them.	line_AB
+Shortest path between two points is the straight line connecting them.	line_AB
 A, B and C are three points.	points_A_B_C
 Atleast 3 points are needed to form a triangle.	triangle_ABC
 Atleast 3 points are required to form a triangle.	triangle_ABC
 A triangle is a polygon having 3 sides.	triangle_ABC
+A triangle is a three-sided polygon.	triangle_ABC
 ABC is a triangle.	triangle_ABC
 ABC is a polygon with 3 sides.	triangle_ABC
 ABC is a polygon having 3 sides.	triangle_ABC
-ABC is a 3-sided polygon.	triangle_ABC
-A, O and B are collinear points.	line_AOB
-O is a point on a straignt line AB.	line_AOB
-The 2 staright lines AB and CD cross one another at point O.	lines_AB_CD
-The 2 staright lines AB and CD intersect at point O.	lines_AB_CD
+A, O and B are collinear points.	collinear_AOB
+O is a point on a straight line AB.	line_AOB
+The two straight lines AB and CD cross one another at point O.	lines_AB_CD
+The two straight lines AB and CD intersect at point O.	lines_AB_CD
+The two straight lines AB and CD cross at point O.	lines_AB_CD
 Angles AOB and BOC have a common arm OB.	angles_AOB_BOC
+Angle AOB and angle BOC have a common arm OB.	angles_AOB_BOC
+Angles AOB and BOC are adjacent angles.	angles_AOB_BOC
 Angle AOB and angle BOC are adjacent angles.	angles_AOB_BOC
+Adjacent angles are angles having a common arm.	angles_AOB_BOC
+Angle AOB is a acute angle.	acute_angle
+Angle AOB is a obtuse angle.	obtuse_angle
+Angle AOB is a right angle.	right_angle
+Angle AOB is a straight angle.	straight_angle
+Angle AOB is a reflex angle.	reflex_angle
+Point M is the midpoint of line AB.	line_AMB
+Point M is the middle point of line AB.	line_AMB
+M is the midpoint of line AB.	line_AMB
+M is the middle point of line AB.	line_AMB
+Point M bisects the line AB.	line_AMB
+M is the point of bisection of line AB.	line_AMB
+Line segment OP bisects the angle AOB.	angle_AOB_bisector_OP
+OP bisects the angle AOB.	angle_AOB_bisector_OP
+Line OP bisects the angle AOB.	angle_AOB_bisector_OP
+OP is the angle bisector of AOB.	angle_AOB_bisector_OP
+OP is the angle bisector of angle AOB.	angle_AOB_bisector_OP
+OP is the bisector of angle AOB.	angle_AOB_bisector_OP
+Every angle has an angle bisector.	angle_AOB_bisector_OP
+A straight line can be drawn from any point to any other point.	line_AB
+If lines AB and CD intersect at point O, then angle AOC and angle DOB are called vertically opposite angles.	vertically_opposite_angles_AOC_DOB
+If lines AB and CD cut one another at point O, then angle AOC and angle DOB are called vertically opposite angles.	vertically_opposite_angles_AOC_DOB
+If lines AB and CD intersect at point O, then angle AOD and angle COB are called vertically opposite angles.	vertically_opposite_angles_AOD_COB
+If lines AB and CD cut one another at point O, then angle AOD and angle COB are called vertically opposite angles.	vertically_opposite_angles_AOD_COB
+If lines AB and CD intersect at point O, then angle AOC and angle AOD are adjacent angles.	adjacent_angles_AOC_AOD
+If lines AB and CD intersect at point O, then angle BOC and angle BOD are adjacent angles.	adjacent_angles_BOC_BOD
+If lines AB and CD intersect at point O, then angle DOA and angle DOB are adjacent angles.	adjacent_angles_DOA_DOB
+If lines AB and CD intersect at point O, then angle COA and angle COB are adjacent angles.	adjacent_angles_COA_COB
+If AB is straight line and O is point on AB, then angle AOB is called a straight angle.	straight_angle
+Sum of two right angles is a straight angle.	sum_right_angles
+If angles AOP and BOP are two right angles then their sum angle AOB is a straight angle.	sum_right_angles
+If lines AB and CD intersect at point O, then angles AOC and AOD are adjacent angles on the same side of CD.	adjacent_angles_AOC_AOD
+If lines AB and CD intersect at point O, then angles BOC and BOD are adjacent angles on the same side of CD.	adjacent_angles_BOC_BOD
+If lines AB and CD intersect at point O, then angles DOA and DOB are adjacent angles on the same side of AB.	adjacent_angles_DOA_DOB
+If lines AB and CD intersect at point O, then angles COA and COB are adjacent angles on the same side of AB.	adjacent_angles_COA_COB
+If lines AB and CD intersect at point O, then sum of angles AOC and AOD are is equal to two right angles.	adjacent_angles_sum_two_right_angles
+If lines AB and CD intersect at point O, then angles AOC and AOD are together equal to two right angles.	adjacent_angles_sum_two_right_angles
+Adjacent angles which one straight line makes with another straight line on one side of it, are together equal to two right angles.	adjacent_angles_sum_two_right_angles
+If two straight lines cut one another, the four angles so formed are together equal to four right angles.	four_angles_sum_four_right_angles
+If two straight lines cut one another, the four angles so formed are equal to four right angles.	four_angles_sum_four_right_angles
+Two angles are called complementary if their sum is equal to right angle.	complementary_angles
+If the sum of angles AOP and POB is equal to a right angle, then angles AOB and POB are called complementary angles.	complementary_angles
+If angles AOP and POB together equal a right angle, then angles AOB and POB are called complementary angles.	complementary_angles
+Angles AOP and POB are complementary angles.	complementary_angles
+Two angles are called complementary if their sum is equal to a right angle.	complementary_angles
+Two angles are called supplementary if their sum is equal to two right angles.	right_supplementary_angles
+Two angles are called supplementary if their sum is equal to a straight angle.	supplementary_angles
+If the sum of angles AOP and POB is equal to two right angles, then angles AOP and POB are called supplementary angles.	right_supplementary_angles
+If angles AOP and POB together equal to two right angles, then angles AOP and POB are called supplementary angles.	right_supplementary_angles
+Two angles are called supplementary if their sum is equal to a straight angle.	supplementary_angles
+If the sum of angles AOP and POB is equal to a straight angle, then angle AOP and POB are called supplementary angles.	supplementary_angles
+If angles AOP and POB together equal to a straight angle, then angles AOP and POB are called supplementary angles.	supplementary_angles
+Angles AOP and POB are supplementary angles.	supplementary_angles
+If two straight lines intersect forming four angles of which one is known to be a right angle, prove that the other three are also right angles.	perpendicular_line_intersection
+In the triangle ABC the angles ABC, ACB are given equal. If the side BC is produced both ways, show that the exterior angles so formed are equal.	equal_exterior_angles_isosceles_triangle
+In the triangle ABC the angles ABC, ACB are given equal. If AB and AC are produced beyond the base, show that the exterior angles so formed are equal.	equal_exterior_angles_isosceles_triangle_1
+OP is the internal bisector of angle AOB.	angle_AOB_bisector_OP
+OP is the internal angle bisector of angle AOB.	angle_AOB_bisector_OP
+OP is the angle bisector of angle AOB.	angle_AOB_bisector_OP
+OP is the external bisector of angle AOB.	angle_AOB_external_bisector_OP
+OP is the external angle bisector of angle AOB.	angle_AOB_external_bisector_OP
+OP and OQ are internal and external bisectors of angle AOB.	angle_AOB_bisectors_OP_OQ
+Prove that the bisectors of the adjacent angles which one straight line makes with another contain a right angle.	adjacent_angles_right_bisectors
+The internal and external bisector of an angle are at right angle to one another.	adjacent_angles_right_bisectors
+If OP and OQ are internal and external bisectors of angle AOB, then angle AOP and angle COQ are complementary.	angle_AOB_bisectors_OP_OQ
+If OP and OQ are internal and external bisectors of angle AOB, then show that the angles BOP and COP are supplementary.	angle_AOB_bisectors_OP_OQ
+If OP and OQ are internal and external bisectors of angle AOB, then show that the angles AOQ and BOQ are supplementary.	angle_AOB_bisectors_OP_OQ
+If two straight lines cut one another, the vertically opposite angles are equal.	equal_vertically_opposite_angles
+If from O, a point in AB, two straight lines OC, OD are drawn on opposite sides of AB so as to make the angle COB equal to the angle AOD. Show that OC and OD are in the same straight line.	vertically_opposite_angles_AOD_COB
+Two straight lines AB, CD cross at O. If OX is the bisector of the angle BOD, prove that XO produced bisects the angle AOC.	bisecting_vertically_opposite_angles
+A triangle is a plane figure bounded by three straight lines.	triangle_ABC
+A quadrilateral is a plane figure bounded by four straight lines.	quadrilateral_ABCD
+ABCD is a polygon with four sides.	quadrilateral_ABCD
+ABCD is a  four-sided polygon.	quadrilateral_ABCD
+ABCD is a quadrilateral.	quadrilateral_ABCD
+ABC is a polygon with three sides.	triangle_ABC
+ABC is a three-sided polygon.	triangle_ABC
+ABCDE is a polygon with five sides.	pentagon_ABCDE
+ABCDE is a five-sided polygon.	pentagon_ABCDE
+ABCDE is a pentagon.	pentagon_ABCDE
+ABCDEF is a polygon with six sides.	hexagon_ABCDEF
+ABCDEF is a six-sided polygon.	hexagon_ABCDEF
+ABCDEF is a hexagon.	hexagon_ABCDEF
+A triangle is equilateral if all its sides are equal.	equilateral_triangle
+A triangle is equiangular if all its angles are equal.	equiangular_trinagle
+A triangle is regular when it is both equilateral and equiangular.	regular_triangle
+ABC is regular triangle.	regular_triangle
+If a triangle is equiangular, then it is also equilateral.	equiangular_equilateral
+If a triangle is equilateral, then it is also equiangular.	equilateral_equiangular
+A quadrilateral is equilateral if all its sides are equal.	equilateral_quadrilateral
+ABCD is a rhombus.	equilateral_quadrilateral
+A quadrilateral is equiangular if all its angles are equal.	equiangular_quadrilateral
+ABCD is a rectangle.	equiangular_quadrilateral
+A quadrilateral is regular when it is both equilateral and equiangular.	regular_quadrilateral
+If ABCD is a quadrilateral, then AC and BD are called diagnols.	quadrilateral_diagnols
+ABCD is a regular quadrilateral.	regular_quadrilateral
+ABCD is a square.	regular_quadrilateral
+A triangle is isosceles if two of its sides are equal.	isosceles_triangle
+ABC is a right-angled triangle.	right_triangle
+ABC is a obtuse-angled triangle.	obtuse_triangle
+ABC is a acute-angled triangle.	acute_triangle
+A triangle is scalene if all its sides are unequal.	triangle_ABC
+In any triangle the straight line joining a vertex to the middle point of the opposite side is called a median.	triangle_median
+In any triangle the straight line joining a vertex to the midpoint of the opposite side is called a median.	triangle_median
+Triangles ABC and XYZ are equilateral and congruent.	equilateral_congruent
+Triangles ABC and XYZ are equilateral and equal in all respects.	equilateral_congruent
+Triangles ABC and XYZ are isosceles and congruent.	isosceles_congruent
+Triangles ABC and XYZ are isosceles and equal in all respects.	isosceles_congruent
+Triangles ABC and XYZ are scalene and congruent.	scalene_congruent
+Triangles ABC and XYZ are scalene and equal in all respects.	scalene_congruent
+Triangles ABC and XYZ are congruent.	scalene_congruent
+Triangles ABC and XYZ are equal in all respects.	scalene_congruent
+If two triangles have two sides of the one equal to two sides of the other, each to each, and the angles included by those sides equal, then the triangles are equal in all respects.	SAS_congruent
+If two triangles have two sides of the one equal to two sides of the other, each to each, and the angles included by those sides equal, then the triangles are congruent.	SAS_congruent
+Show that the bisector of the vertical angle of an isosceles triangle bisects the base.	vertical_isosceles_bisector_bisector
+Show that the bisector of the vertical angle of an isosceles triangle is perpendicular to the base.	vertical_isosceles_bisector_perpendicular
+Let O be the middle point of a straight line AB, and let OC be perpendicular to it. If P is any point in OC, prove that PA = PB.	midpoint_perpendicular_equal_sides
+A quadrilateral all whose sides are equal and all whose angles are right angles is called a square.	regular_quadrilateral
+A quadrilateral all whose sides are equal and whose opposite sides are parallel is called a rhombus.	equilateral_quadrilateral
+A quadrilateral whose opposite sides are equal and all whose angles are right angles is called a rectangle.	rectangle
+A quadrilateral whose opposite sides are equal and parallel is called a parallelogram.	parallelogram
+In a square ABCD, the diagnols AC and BD are equal.	square_diagnols
+ABCD is a square, and L, M, and N are the middle points of AB, BC, and CD. Prove that LM = MN.
+ABCD is a square, and L, M, and N are the middle points of AB, BC, and CD. Prove that AM = DM.
+ABCD is a square, and L, M, and N are the middle points of AB, BC, and CD. Prove that AN = AM.
+ABCD is a square, and L, M, and N are the middle points of AB, BC, and CD. Prove that BN = DM.
+ABC is an isosceles triangle. From the equal sides AB, AC two equal parts AX, AY are cut off, and BY and CX are joined. Prove that BY = CX.
+The angles at the base of an isosceles triangle are equal.
+If the equal sides AB, AC of an isosceles triangle are produced, the exterior angles EBC, FCB are equal.
+If the equal sides AB, AC of an isosceles triangle are produced, the exterior angles EBC, FCB are equal, for they are the supplements of the equal angles at the base.
+If a triangle is equilateral, it is also equiangular.
+ABC is a an isosceles triangle with AB and AC being the equal sides. Angle BAC is called the vertical angle.
+ABC is a an isosceles triangle with AB and AC being the equal sides. A is called the vertex.
+An isosceles triangle is symmetrical about the bisector of its vertical angle.
+An equilateral triangle is symmetrical about the bisector of any of its angles.
+ABCD is a four-sided figure whose sides are all equal, and the diagonal BD is drawn. Show that the angle ABD = the angle ADB.
+ABCD is a four-sided figure whose sides are all equal, and the diagonal BD is drawn. Show that the angle CBD = the angle CDB.
+ABCD is a four-sided figure whose sides are all equal, and the diagonal BD is drawn. Show that the angle ABC = the angle ADC.
+ABC, DBC are two isosceles triangles drawn on the same base BC, but on opposite sides of it. Prove that the angle ABD = the angle ACD.
+ABC, DBC are two isosceles triangles drawn on the same base BC and on the same side of it. Prove that the angle ABD = the angle ACD.
+AB, AC are the equal sides of an isosceles triangle ABC and L, M, N are the middle points of AB, BC, and CA respectively. Prove that LM = NM.
+AB, AC are the equal sides of an isosceles triangle ABC and L, M, N are the middle points of AB, BC, and CA respectively. Prove that BN = CL.
+AB, AC are the equal sides of an isosceles triangle ABC and L, M, N are the middle points of AB, BC, and CA respectively. Prove that the angle ALM = the angle ANM.
+If two angles of a triangle are equal to one another, then the sides which are opposite to the equal angles are equal to one another.
+An equiangular triangle is also equilateral.
+If a triangle is equiangular then it is also equilateral.
+If two triangles have the three sides of the one equal to the three sides of the other, each to each, they are equal in all respects.
+If two triangles have the three sides of the one equal to the three sides of the other, each to each, they are congruent.
+If two triangles have the three sides of the one equal to the three sides of the other, the triangles are equiangular to one another.
+Show that the straight line which joins the vertex of an isosceles triangle to the middle point of the base, bisects the vertical angle.
+Show that the straight line which joins the vertex of an isosceles triangle to the middle point of the base,  is perpendicular to the base.
+If ABCD is a rhombus show by drawing the diagonals AC, BD, that the angle ABC = the angle ADC.
+If ABCD is a rhombus show by drawing the diagonals AC, BD, that AC bisects each of the angles BAD, BCD.
+If ABCD is a rhombus show by drawing the diagonals AC, BD, that the diagonals bisect one another at right angles.
+If in a quadrilateral ABCD the opposite sides are equal, namely AB = CD and AD = CB. Prove that the angle ADC = the angle ABC.
+If ABC and DBC are two isosceles triangles drawn on the same base BC and on the same side of BC, prove that the angle ABD = the angle ACD.
+If ABC and DBC are two isosceles triangles drawn on the same base BC but on the opposite sides of BC, prove that the angle ABD = the angle ACD.
+If ABC, DBC are two isosceles triangles drawn on opposite sides of the same base BC, and if AD be joined, prove that each of the angles BAC, BDC will be divided into two equal parts.
+Show that the straight lines which join the extremities of the base of an isosceles triangle to the middle points of the opposite sides are equal to one another.
+Two given points in the base of an isosceles triangle are equidistant from the extremities of the base. Show that they are also equidistant from the vertex.
+Show that the triangle formed by joining the middle points of the sides of an equilateral triangle is also equilateral.
+ABC is an isosceles triangle having AB equal to AC and the angles at B and C are bisected by BO and CO. Show that BO = CO.
+ABC is an isosceles triangle having AB equal to AC and the angles at B and C are bisected by BO and CO. Show that AO bisects the angle BAC.
+Show that the diagnols of a Rhombus bisect one another at right angles.
+The equal sides BA, CA of an isosceles triangle BAC are produced beyond the vertex A to the points E and F, so that AE is equal to AF and FB, EC are joined. Show that FB is equal to EC.
+If one side of a triangle is produced, then the exterior angle is greater than either of the interior opposite angles.
+Any two angles of a triangle are together less than two right angles.
+Every triangle must have at least two acute angles.
+Only one perpendicular can be drawn to a straight line from a given point outside it.
+ABC is a triangle and D any point within it. If BD and CD are joined, the angle BDC is greater than the angle BAC. Prove this by producing BD to meet AC.
+ABC is a triangle and D any point within it. If BD and CD are joined, the angle BDC is greater than the angle BAC. Prove this by joining AD, and producing it towards the base.
+If any side of a triangle is produced both ways, the exterior angles so formed are together greater than two right angles.
+To a given straight line there cannot be drawn from a point outside it more than two straight lines of the same given length.
+If the equal sides of an isosceles triangle are produced, the exterior angles must be obtuse.
+If one side of a triangle is greater than another, then the angle opposite to the greater side is greater than the angle opposite to the lesser side.
+If one angle of a triangle is greater than another, then the side opposite to the greater angle is greater than the side opposite to the lesser angle.
+Any two sides of a triangle are together greater than the third side.
+The shortest distance between two points is the straight line which joins them.
+Of all straight lines drawn from a given point to a given straight line the perpendicular is the least.
+Of all straight lines drawn from a given point to a given straight line the perpendicular is the shortest.
+If OC is the shortest straight line from O to AB, then OC is perpendicular to AB.
+Two obliques OP, OQ, which cut AB at equal distances from C, the foot of the perpendicular, are equal.
+Of two obliques OQ, OR, if OR cuts AB at the greater distance from C, the foot of the perpendicular, then OR is greater than OQ.
+The hypotenuse is the greatest side of a right-angled triangle.
+The greatest side of any triangle makes acute angles with each of the other sides.
+If from the ends of a side of a triangle, two straight lines are drawn to a point within the triangle, then these straight lines are together less than the other two sides of the triangle.
+BC, the base of an isosceles triangle ABC, is produced to any point D. Show that AD is greater than either of the equal sides.
+If in a quadrilateral the greatest and least sides are opposite to one another, then each of the angles adjacent to the least side is greater than its opposite angle.
+In a triangle ABC, if AC is not greater than AB, show that any straight line drawn through the vertex A and terminated by the base BC, is less than AB.
+ABC is a triangle, in which OB, OC bisect the angles ABC, ACB respectively. Show that, if AB is greater than AC, then OB is greater than OC.
+The difference of any two sides of a triangle is less than the third side.
+The sum of the distances of any point from the three angular points of a triangle is greater than half its perimeter.
+ABC is a triangle, and the vertical angle BAC is bisected by a line which meets BC in X. Show that BA is greater than BX, and CA greater than CX.
+The sum of the distances of any point within a triangle from its angular points is less than the perimeter of the triangle.
+The sum of the diagonals of a quadrilateral is not greater than the sum of the four straight lines drawn from the angular points to any given point.
+In a triangle any two sides are together greater than twice the median which bisects the remaining side. Prove by producing the median.
+In any triangle the sum of the medians is less than the perimeter.
+The perimeter of a quadrilateral is greater than the sum of its diagnols.
+#parallels
+Lines in the same plane that do not meet however far they are produced beyond both ends are called parallel straight lines.
+Two intersecting straight lines cannot both be parallel to a third straight line.
+Through a given point there can be only one straight line parallel to a given straight line.
+When two straight lines AB, CD are met by a third straight line EF, eight angles are formed.
+When two straight lines AB, CD are crossed by a third straight line EF, eight angles are formed.
+When two straight lines AB, CD are intersected by a third straight line EF, eight angles are formed.
+When two straight lines AB, CD are met by a third straight line EF at points X and Y, angles AXE, EXB, CYF, FYD are called exterior angles.
+When two straight lines AB, CD are met by a third straight line EF at points X and Y, angles AXY, BXY, CYX, DYX are called interior angles.
+When two straight lines AB, CD are met by a third straight line EF at points X and Y, angles AXY, XYD are called alternate angles.
+When two straight lines AB, CD are met by a third straight line EF at points X and Y, angles BXY, XYC are called alternate angles.
+When two straight lines AB, CD are met by a third straight line EF at points X and Y, angle XYD is the interior opposite angle of angle EXB on the same side of EF.
+When two straight lines AB, CD are met by a third straight line EF at points X and Y, angles XYD and EXB corresponding angles on the same side of EF.
+When two straight lines AB, CD are met by a third straight line EF at points X and Y, angle XYC is the interior opposite angle of angle EXA on the same side of EF.
+When two straight lines AB, CD are met by a third straight line EF at points X and Y, angles XYC and EXA corresponding angles on the same side of EF.
+When two straight lines AB, CD are met by a third straight line EF at points X and Y, angle YXB is the interior opposite angle of angle FYD on the same side of EF.
+When two straight lines AB, CD are met by a third straight line EF at points X and Y, angles YXB and FYD corresponding angles on the same side of EF.
+When two straight lines AB, CD are met by a third straight line EF at points X and Y, angle YXA is the interior opposite angle of angle FYC on the same side of EF.
+When two straight lines AB, CD are met by a third straight line EF at points X and Y, angles YXA and FYC corresponding angles on the same side of EF.
+If a straight line cuts two other straight lines so as to make the alternate angles equal, then the two straight lines are parallel.
+If a straight line cuts two other straight lines so as to make an exterior angle equal to the interior opposite angle on the same side of the cutting line, then the two straight lines are parallel.
+If a straight line cuts two other straight lines so as to make the interior angles on the same side equal to two right angles, then the two straight lines are parallel.
+A straight line drawn across a set of given lines is called a transversal.
+If a straight line cuts two parallel lines, it makes the alternate angles equal to one another.
+If a straight line cuts two parallel lines, it makes the exterior angle equal to the interior opposite angle on the same side of the cutting line.
+If a straight line cuts two parallel lines, it makes the two interior angles on the same side together equal to two right angles.
+Parallel straight lines have the same direction but differ in position.
+Through any point we may assume a line to pass parallel to any given straight line.
+Straight lines which are parallel to the same straight line are parallel to one another.
+Straight lines which are perpendicular to the same straight line are parallel to one another.
+If a straight line meets two or more parallel straight lines, and is perpendicular to one of them, it is also perpendicular to all the others.
+Angles of which the arms are parallel, each to each, are either equal or supplementary.
+Two straight lines AB, CD bisect one another at O. Show that the straight lines joining AC and BD are parallel.
+Any straight line drawn parallel to the base of an isosceles triangle makes equal angles with the sides.
+If from any point in the bisector of an angle a straight line is drawn parallel to either arm of the angle, the triangle thus formed is isosceles.
+From X, a point in the base BC of an isosceles triangle ABC, a straight line is drawn at right angles to the base, cutting AB in Y, and CA produced in Z. Show the triangle AYZ is isosceles.
+If the straight line which bisects an exterior angle of a triangle is parallel to the opposite side, show that the triangle is isosceles.
+The straight lines drawn from any point in the bisector of an angle parallel to the arms of the angle, and terminated by them are equal and the resulting figure is a Rhombus.
+AB and CD are two straight lines intersecting at D, and the adjacent angles so formed are bisected. If through any point X in DC a straight line XYZ is drawn parallel to AB and meeting the bisectors in Y and Z, show that XY is equal to XZ.
+#triangles_continued
+The three angles of a triangle are together equal to two right angles.
+If a side of a triangle is produced, the exterior angle is equal to the sum of the two interior opposite angles.
+If two triangles have two angles of the one respectively equal to two angles of the other, then the third angle of the one is equal to the third angle of the other.
+In any right-angled triangle the two acute angles are complementary.
+If one angle of a triangle is equal to the sum of the other two, the triangle is right-angled.
+The sum of the angles of any quadrilateral figure is equal to four right angles.
+Prove that the three angles of a triangle are together equal to two right angles by supposing a line drawn through the vertex parallel to the base.
+If two straight lines are perpendicular to two other straight lines, each to each, the acute angle between the first pair is equal to the acute angle between the second pair.
+A pentagon is equilateral if all its sides are equal.	equilateral_pentagon
+A pentagon is equiangular if all its angles are equal.	equiangular_pentagon
+A pentagon is regular when it is both equilateral and equiangular.	regular_pentagon
+ABCDE is a regular pentagon.	regular_pentagon
+A hexagon is equilateral if all its sides are equal.	equiangular_hexagon
+A hexagon is equiangular if all its angles are equal.	equiangular_hexagon
+A hexagon is regular when it is both equilateral and equiangular.	regular_hexagon
+ABCDEF is a regular hexagon.	regular_hexagon
+
+
+Corrolary 1 after theorem 16
+
+
+
+
+
+
+
+
+
+TODO
+Add examples for the following concepts
+	equidistant
+	midpoint and middle point
+	each other vs one another
+	produced beyond
+	together and sum of angles
+	base of a triangle
+	hypotenuse
+	opposite side of vertex
+	opposite sides
+	greater than lesser than
+	oblique
+	shortest vs least
+	polygon vs rectilinear figure
+
+Check shew Shew is not present in the data. is should be show Show.
+Make examples from Numerical exercizes on page 27 before theorem 8, exercizes on theorem 16 page 43. except 7 and 8
+

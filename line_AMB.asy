@@ -1,10 +1,11 @@
 unitsize(1cm);
 
 pair A = (-3,6);
-pair O = (0,0);
+pair M = (1/2,-1);
 pair B = (4,-8);
 
 dot("$A$", A, 2NE);
-dot("$O$", O, 2NE);
+dot("$M$", M, 2NE);
 dot("$B$", B, 2NE);
-draw(A -- O -- B);
+
+draw(A -- M -- B);

@@ -1,0 +1,203 @@
+#!/bin/ruby
+
+require "open3"
+require "logger"
+require "csv"
+
+$logger = Logger.new STDOUT
+$logger.level = Logger::DEBUG
+$logger.formatter = proc {|severity, datetime, progname, msg| "#{severity}: #{msg}\n" }
+
+module Infra
+  module_function
+  # extend self
+
+  def get_files_names type
+    raise ArgumentError.new "Expected file type :png or :asy. Got #{type}" unless [:png, :asy].include? type
+    Dir.glob("*.#{type}").filter_map {|f| f[0..-(type.to_s.length+2)] unless f.include? "setup"}
+  end
+
+  def get_file_modification_times type
+    raise ArgumentError.new "Expected file type :png or :asy. Got #{type}" unless [:png, :asy].include? type
+    Dir.glob("*.#{type}").filter_map {|f| [f[0..-(type.to_s.length+2)].to_sym, File.mtime(f).to_i]  unless f.include? "setup"}.to_h
+  end
+
+  def get_dependency_map
+    dependency_map = {
+      "setup" => []
+    }
+
+    type = "asy"
+
+    Dir.glob("*.#{type}").each do |f|
+      File.readlines(f).each do |l|
+        break unless l.include? "import "
+
+        dependency_map.keys.each do |d|
+          if l.include? d
+            dependency_map[d] << f[0..-(type.length+2)]
+          end
+        end
+      end
+    end
+
+    dependency_map
+  end
+
+  def get_build_meta
+    asy_files = get_file_modification_times :asy
+    png_files = get_file_modification_times :png
+
+    # for all dependencies, if dependency asy was modified after dependent png, then set dependent asy modification time to now
+    get_dependency_map.each do |d,fs|
+      fs.each do |f|
+        if File.exist?("#{f}.png") && File.mtime("#{f}.png") < File.mtime("#{d}.asy")
+          asy_files[f.to_sym] = Time.now.to_i
+        end
+      end
+    end
+
+    files_to_build = asy_files.merge(png_files) {|k, ov, nv| ov - nv }.filter_map {|k, v| k if v > 0 }
+
+    [files_to_build, files_to_build.count == asy_files.count]
+  end
+
+  def convert_eps_to_png file_name
+    `convert #{file_name}.eps -gravity center -background none -extent 600x600 -colorspace RGB #{file_name}.png`
+  end
+
+  # def build_asy file_name = "*"
+  #   Open3.popen3("asy #{file_name}.asy") do |stdin, stdout, stderr|
+  #     unless stderr.empty?
+  #       $logger.errro "Error while building asymptote file"
+  #       exit 1
+  #     end
+  #   end
+  # end
+
+  def build sources = nil
+    files_to_build, is_full_build = sources.nil? || sources.empty? ? get_build_meta : [sources, false]
+
+    if is_full_build
+      $logger.info "Generating eps files"
+      # build_asy
+      # `asy *.asy`
+      unless system "asy *.asy"
+        $logger.error "Error while building asymptote file"
+        exit 1
+      end
+
+      $logger.info "Generating png files"
+      get_files_names(:asy).each {|f| convert_eps_to_png f }
+    else
+      if files_to_build.empty?
+        $logger.warn "All files already built. Nothing to build!"
+        exit 0
+      end
+
+      files_to_build.each do |f|
+        $logger.info "Building #{f}.asy"
+
+        # build_asy f
+        # `asy #{f}.asy`
+        unless system "asy #{f}.asy"
+          $logger.error "Error while building asymptote file #{f}"
+          exit 1
+        end
+        convert_eps_to_png f
+      end
+    end
+
+    $logger.info "Removing eps files."
+    `rm *.eps`
+  end
+
+  def rebuild
+    clean
+    build
+  end
+
+  def clean
+    $logger.info "Cleaning..."
+
+    if `rm *.png 2>&1`.include? "No such file or directory"
+      $logger.warn "Nothing to clean!"
+    else
+      $logger.info "Removed all png files"
+    end
+  end
+
+  def dry_inspect range = nil
+    inspect range, true
+  end
+
+  def inspect range = nil, is_dry = false
+    missing_images = []
+    missing_images_details = proc {|missing_images| "Following images were not found: #{missing_images}" }
+
+    File.open "./statements.tsv" do |f|
+      CSV.parse(f, col_sep: "\t").each_with_index do |r, i|
+
+        if range.nil? || range === i
+          if r.length != 2
+            missing_images << [i+1, nil]
+            $logger.error missing_images_details.call(missing_images)
+
+            exit 1
+          else
+            $logger.info "#{i+1} => #{r.first}"
+
+            if `ls #{r.last}.png 2>&1`.include? "No such file or directory"
+              missing_images << [i+1, r.last]
+            else
+              `feh #{r.last}.png --image-bg white 2>&1` unless is_dry
+            end
+          end
+        end
+
+      end
+    end
+
+    $logger.error missing_images_details.call(missing_images)
+  end
+
+  def view images
+    images.each do |image|
+      $logger.info "#{image}.png"
+      system "feh #{image}.png --image-bg white"
+    end
+  end
+
+  def view_no_bg images
+    images.each do |image|
+      $logger.info "#{image}.png"
+      system "feh #{image}.png"
+    end
+  end
+end
+
+ALLOWED_ACTIONS = [:clean, :build, :rebuild, :inspect, :view, :dry_inspect, :view_no_bg]
+
+action = ARGV[0].to_sym
+unless ALLOWED_ACTIONS.include? action
+  $logger.error "Invalid action received. Allowed actions: #{ALLOWED_ACTIONS.join(", ")}"
+  exit 1
+end
+
+args = ARGV[1..]
+
+if args.empty?
+  Infra.send action
+  exit 0
+end
+
+if [:inspect, :dry_inspect].include? action
+  if args.count > 2
+    $logger.error "inspect action expects 2 arguments"
+    exit 1
+  end
+
+  args = args.count == 1 ? (args[0].to_i-1).. : (args[0].to_i-1)..(args[1].to_i-1)
+end
+
+Infra.send action, args

@@ -1,10 +1,20 @@
-import utils;
+import geometry;
 
-point a = get_point();
-point o = get_point();
-point b = get_point();
-point c = get_point();
+unitsize(1cm);
 
-draw_line_segment(o, a, "O", "A");
-draw_line_segment(o, b, s2 = "B");
-draw_line_segment(o, c, s2 = "C");
+pair A = (2,7);
+pair O = (-5,-4);
+pair B = (9,6);
+pair C = (7,-7);
+
+draw(A -- O);
+draw(O -- B);
+draw(O -- C);
+
+dot("$A$", A, 2NW);
+dot("$O$", O, 2NW);
+dot("$B$", B, 2NW);
+dot("$C$", C, 2SE);
+
+markangle(A, O, B, radius=-35);
+markangle(B, O, C, radius=-40);

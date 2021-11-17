@@ -1,4 +1,7 @@
-import utils;
+unitsize(1cm);
 
-draw_random_point("A");
-draw_random_point("B");
+pair A = (-3,6);
+pair B = (6,9);
+
+dot("$A$", A, 2SW);
+dot("$B$", B, 2NE);

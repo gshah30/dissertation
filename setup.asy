@@ -1,20 +1,15 @@
-import geometry;
-import math;
+import markers;
 
-// settings.outformat = "png";
+pen light_pen = gray(0.8);
 
-srand((int) time("%S") * (int) time("%M"));
-unitsize(1cm);
-// size(10cm);
+marker single_central_marker = marker(markinterval(n=1, f=stickframe(n=1), rotated=true));
 
-real spread = 11;
-real canvas = 10 * spread/11;
+marker double_central_marker = marker(markinterval(n=1, f=stickframe(n=2), rotated=true));
+marker double_light_central_marker = marker(markinterval(n=1, f=stickframe(n=2, p=light_pen), rotated=true));
+marker two_double_light_marker = marker(markinterval(n=2, f=stickframe(n=2, p=light_pen), rotated=true));
 
-void fix_canvas_size() {
-  fill(circle((spread, spread), 0.01));
-  fill(circle((-spread, 0), 0.01));
-  fill(circle((-spread, -spread), 0.01));
-  fill(circle((0, -spread), 0.01));
-}
+marker triple_central_marker = marker(markinterval(n=1, f=stickframe(n=3), rotated=true));
+marker two_triple_light_marker = marker(markinterval(n=2, f=stickframe(n=3, light_pen), rotated=true));
 
-fix_canvas_size();
+
+marker single_light_central_marker = marker(markinterval(n=1, f=stickframe(p=light_pen), rotated=true));

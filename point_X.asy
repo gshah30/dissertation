@@ -1,3 +1,3 @@
-import utils;
+unitsize(1cm);
 
-draw_point((0, 0), "X");
+dot("$X$", (0,0), align=2NE);

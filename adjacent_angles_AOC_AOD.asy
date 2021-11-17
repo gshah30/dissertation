@@ -1,3 +1,5 @@
+import geometry;
+
 unitsize(1cm);
 
 pair A = (-7,2);
@@ -17,3 +19,6 @@ dot("$D$", D, 2NE);
 draw(C -- D);
 
 dot("$O$", O, 2NE);
+
+markangle(A, O, C, radius=-35, n=1);
+markangle(A, O, D, radius=40, n=2);

@@ -18,8 +18,5 @@ dot("$B$", B, 2SE);
 dot("$C$", C, 2NE);
 dot("$D$", D, 2NW);
 
-// markangle(D, A, B, radius=-23, n=2);
-// markangle(D, C, B, radius=23, n=2);
-
-// markangle(C, D, A, radius=-23);
-// markangle(C, B, A, radius=23);
+markangle(C, D, A, radius=-23);
+markangle(C, B, A, radius=23);

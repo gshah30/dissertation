@@ -62,33 +62,32 @@ module Infra
     [files_to_build, files_to_build.count == asy_files.count]
   end
 
-  def convert_eps_to_png file_name
-    `convert #{file_name}.eps -gravity center -background none -extent 600x600 -colorspace RGB #{file_name}.png`
+  def convert_cmd file_name
+    "convert #{file_name}.eps -gravity center -background none -extent 600x600 -colorspace RGB #{file_name}.png"
   end
 
-  # def build_asy file_name = "*"
-  #   Open3.popen3("asy #{file_name}.asy") do |stdin, stdout, stderr|
-  #     unless stderr.empty?
-  #       $logger.errro "Error while building asymptote file"
-  #       exit 1
-  #     end
-  #   end
-  # end
+  def run_and_forget command
+    pid = spawn command
+    Process.detach pid
+  end
+
+  def run command
+    output = `#{command}`
+    [output, $?.exitstatus]
+  end
 
   def build sources = nil
     files_to_build, is_full_build = sources.nil? || sources.empty? ? get_build_meta : [sources, false]
 
     if is_full_build
       $logger.info "Generating eps files"
-      # build_asy
-      # `asy *.asy`
-      unless system "asy *.asy"
+      unless system "asy #{files_to_build.join(".asy ")}.asy"
         $logger.error "Error while building asymptote file"
         exit 1
       end
 
       $logger.info "Generating png files"
-      get_files_names(:asy).each {|f| convert_eps_to_png f }
+      get_files_names(:asy).each {|f| `#{convert_cmd(f)}` }
     else
       if files_to_build.empty?
         $logger.warn "All files already built. Nothing to build!"
@@ -98,23 +97,62 @@ module Infra
       files_to_build.each do |f|
         $logger.info "Building #{f}.asy"
 
-        # build_asy f
-        # `asy #{f}.asy`
         unless system "asy #{f}.asy"
           $logger.error "Error while building asymptote file #{f}"
           exit 1
         end
-        convert_eps_to_png f
+        `#{convert_cmd(f)}`
+      end
+    end
+  end
+
+  def pbuild sources = nil
+    files_to_build, is_full_build = sources.nil? || sources.empty? ? get_build_meta : [sources, false]
+
+    if files_to_build.empty?
+      $logger.warn "All files already built. Nothing to build!"
+      exit 0
+    end
+
+    actors = files_to_build.group_by.with_index{|_,i| i % 8}.map do |id, batch|
+      $logger.info "Processing batch: Id => #{id}; Size => #{batch.size}"
+
+      Ractor.new(id, batch, Infra) do |id, batch, infra|
+        compile_output, status = infra.run "asy #{batch.join(".asy ")}.asy 2>&1"
+        Ractor.yield type: :error, id: id, batch: batch ,message: compile_output unless status == 0
+
+        batch.each do |f|
+          convert_output, status = infra.run infra.convert_cmd(f)
+          Ractor.yield type: :error, id: id, batch: batch, message: convert_output unless status
+        end
+
+        {type: :info, id: id, message: "success"}
+      end
+    end
+
+    while !actors.empty?
+      a, result = Ractor.select *actors
+      actors.delete a
+
+      if result[:type] == :error
+        $logger.error "Batch Id => #{result[:id]}; Message => #{result[:message]}; Batch => #{batch}"
+      else
+        $logger.info "Batch Id => #{result[:id]}; Message => #{result[:message]}"
       end
     end
 
     $logger.info "Removing eps files."
-    `rm *.eps`
+    run_and_forget "rm *.eps"
   end
 
   def rebuild
     clean
     build
+  end
+
+  def prebuild
+    clean
+    pbuild
   end
 
   def clean
@@ -176,7 +214,7 @@ module Infra
   end
 end
 
-ALLOWED_ACTIONS = [:clean, :build, :rebuild, :inspect, :view, :dry_inspect, :view_no_bg]
+ALLOWED_ACTIONS = [:clean, :build, :rebuild, :inspect, :view, :dry_inspect, :view_no_bg, :pbuild, :prebuild]
 
 action = ARGV[0].to_sym
 unless ALLOWED_ACTIONS.include? action

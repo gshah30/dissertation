@@ -1,18 +1,25 @@
 #!/bin/ruby
-
 require "open3"
 require "logger"
 require "csv"
+
+$start_time = Time.now
 
 $logger = Logger.new STDOUT
 $logger.level = Logger::DEBUG
 $logger.formatter = proc {|severity, datetime, progname, msg| "#{severity}: #{msg}\n" }
 
+def exit_gracefully status
+  exit status
+rescue SystemExit => e
+  $logger.info "Time taken: #{Time.now - $start_time}"
+  raise e
+end
+
 module Infra
   module_function
-  # extend self
 
-  def get_files_names type
+  def get_files_names(type)
     raise ArgumentError.new "Expected file type :png or :asy. Got #{type}" unless [:png, :asy].include? type
     Dir.glob("*.#{type}").filter_map {|f| f[0..-(type.to_s.length+2)] unless f.include? "setup"}
   end
@@ -62,28 +69,28 @@ module Infra
     [files_to_build, files_to_build.count == asy_files.count]
   end
 
-  def convert_cmd file_name
-    "convert #{file_name}.eps -gravity center -background none -extent 600x600 -colorspace RGB #{file_name}.png"
+  def convert_cmd(file_name)
+    "convert #{file_name}.eps -gravity center -background white -extent 600x600 -colorspace Gray #{file_name}.png"
   end
 
-  def run_and_forget command
+  def run_and_forget(command)
     pid = spawn command
     Process.detach pid
   end
 
-  def run command
+  def run(command)
     output = `#{command}`
     [output, $?.exitstatus]
   end
 
-  def build sources = nil
+  def build(sources = nil)
     files_to_build, is_full_build = sources.nil? || sources.empty? ? get_build_meta : [sources, false]
 
     if is_full_build
       $logger.info "Generating eps files"
       unless system "asy #{files_to_build.join(".asy ")}.asy"
         $logger.error "Error while building asymptote file"
-        exit 1
+        exit_gracefully 1
       end
 
       $logger.info "Generating png files"
@@ -91,7 +98,7 @@ module Infra
     else
       if files_to_build.empty?
         $logger.warn "All files already built. Nothing to build!"
-        exit 0
+        exit_gracefully 0
       end
 
       files_to_build.each do |f|
@@ -99,19 +106,19 @@ module Infra
 
         unless system "asy #{f}.asy"
           $logger.error "Error while building asymptote file #{f}"
-          exit 1
+          exit_gracefully 1
         end
         `#{convert_cmd(f)}`
       end
     end
   end
 
-  def pbuild sources = nil
-    files_to_build, is_full_build = sources.nil? || sources.empty? ? get_build_meta : [sources, false]
+  def pbuild(sources = nil)
+    files_to_build, is_full_build = sources.nil? || sources.empty? ? get_build_meta : [sources.map{|s| s.delete(".").strip }, false]
 
     if files_to_build.empty?
       $logger.warn "All files already built. Nothing to build!"
-      exit 0
+      exit_gracefully 0
     end
 
     actors = files_to_build.group_by.with_index{|_,i| i % 8}.map do |id, batch|
@@ -119,12 +126,12 @@ module Infra
 
       Ractor.new(id, batch, Infra) do |id, batch, infra|
         compile_output, status = infra.run "asy #{batch.join(".asy ")}.asy 2>&1"
-        Ractor.yield type: :error, id: id, batch: batch ,message: compile_output unless status == 0
+        Ractor.yield({type: :error, id: id, batch: batch ,message: compile_output}) unless status == 0
 
         batch.each do |f|
           convert_output, status = infra.run infra.convert_cmd(f)
-          Ractor.yield type: :error, id: id, batch: batch, message: convert_output unless status
-        end
+          Ractor.yield({type: :error, id: id, batch: batch, message: convert_output}) unless status == 0
+        end if status == 0
 
         {type: :info, id: id, message: "success"}
       end
@@ -135,7 +142,8 @@ module Infra
       actors.delete a
 
       if result[:type] == :error
-        $logger.error "Batch Id => #{result[:id]}; Message => #{result[:message]}; Batch => #{batch}"
+        $logger.error "Batch Id => #{result[:id]}; Message => #{result[:message]}; Batch => #{result[:batch]}"
+        exit_gracefully 1
       else
         $logger.info "Batch Id => #{result[:id]}; Message => #{result[:message]}"
       end
@@ -165,11 +173,11 @@ module Infra
     end
   end
 
-  def dry_inspect range = nil
+  def dry_inspect(range = nil)
     inspect range, true
   end
 
-  def inspect range = nil, is_dry = false
+  def inspect(range = nil, is_dry = false)
     missing_images = []
     missing_images_details = proc {|missing_images| "Following images were not found: #{missing_images}" }
 
@@ -181,7 +189,7 @@ module Infra
             missing_images << [i+1, nil]
             $logger.error missing_images_details.call(missing_images)
 
-            exit 1
+            exit_gracefully 1
           else
             $logger.info "#{i+1} => #{r.first}"
 
@@ -199,43 +207,41 @@ module Infra
     $logger.error missing_images_details.call(missing_images)
   end
 
-  def view images
+  def view(images)
     images.each do |image|
-      $logger.info "#{image}.png"
-      system "feh #{image}.png --image-bg white"
-    end
-  end
+      image = image.delete(".").strip
 
-  def view_no_bg images
-    images.each do |image|
       $logger.info "#{image}.png"
-      system "feh #{image}.png"
+
+      `kill -TERM feh`
+      run_and_forget "feh #{image}.png --image-bg white"
     end
   end
 end
 
-ALLOWED_ACTIONS = [:clean, :build, :rebuild, :inspect, :view, :dry_inspect, :view_no_bg, :pbuild, :prebuild]
+ALLOWED_ACTIONS = [:clean, :build, :rebuild, :inspect, :view, :dry_inspect, :pbuild, :prebuild]
 
 action = ARGV[0].to_sym
 unless ALLOWED_ACTIONS.include? action
   $logger.error "Invalid action received. Allowed actions: #{ALLOWED_ACTIONS.join(", ")}"
-  exit 1
+  exit_gracefully 1
 end
 
 args = ARGV[1..]
 
 if args.empty?
   Infra.send action
-  exit 0
+  exit_gracefully 0
 end
 
 if [:inspect, :dry_inspect].include? action
   if args.count > 2
     $logger.error "inspect action expects 2 arguments"
-    exit 1
+    exit_gracefully 1
   end
 
   args = args.count == 1 ? (args[0].to_i-1).. : (args[0].to_i-1)..(args[1].to_i-1)
 end
 
 Infra.send action, args
+exit_gracefully 0

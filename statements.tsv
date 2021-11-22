@@ -171,7 +171,7 @@ ABC, DBC are two isosceles triangles drawn on the same base BC and on the same s
 AB, AC are the equal sides of an isosceles triangle ABC and L, M, N are the middle points of AB, BC, and CA respectively. Prove that LM = NM.	isosceles_midpoints_1
 AB, AC are the equal sides of an isosceles triangle ABC and L, M, N are the middle points of AB, BC, and CA respectively. Prove that BN = CL.	isosceles_midpoints_2
 AB, AC are the equal sides of an isosceles triangle ABC and L, M, N are the middle points of AB, BC, and CA respectively. Prove that the angle ALM = the angle ANM.	isosceles_midpoints_3
-If two angles of a triangle are equal to one another, then the sides which are opposite to the equal angles are equal to one another.
+If two angles of a triangle are equal to one another, then the sides which are opposite to the equal angles are equal to one another.	angular_isosceles
 An equiangular triangle is also equilateral.	equilateral_equiangular
 If a triangle is equiangular then it is also equilateral.	equiangular_equilateral
 If two triangles have the three sides of the one equal to the three sides of the other, each to each, they are equal in all respects.	scalene_congruent
@@ -187,54 +187,63 @@ If ABC and DBC are two isosceles triangles drawn on the same side of same base B
 If ABC and DBC are two isosceles triangles drawn on the opposite sides of the same base BC, prove that the angle ABD = the angle ACD.	opposite_isosceles_triangles
 If ABC, DBC are two isosceles triangles drawn on opposite sides of the same base BC, and if AD be joined, prove that each of the angles BAC, BDC will be divided into two equal parts.	opposite_isosceles_triangles_1
 Show that the straight lines which join the extremities of the base of an isosceles triangle to the middle points of the opposite sides are equal to one another.	isosceles_base_midpoint
-Two given points in the base of an isosceles triangle are equidistant from the extremities of the base. Show that they are also equidistant from the vertex.
-Show that the triangle formed by joining the middle points of the sides of an equilateral triangle is also equilateral.
-ABC is an isosceles triangle having AB equal to AC and the angles at B and C are bisected by BO and CO. Show that BO = CO.
-ABC is an isosceles triangle having AB equal to AC and the angles at B and C are bisected by BO and CO. Show that AO bisects the angle BAC.
-Show that the diagnols of a Rhombus bisect one another at right angles.
-The equal sides BA, CA of an isosceles triangle BAC are produced beyond the vertex A to the points E and F, so that AE is equal to AF and FB, EC are joined. Show that FB is equal to EC.
-If one side of a triangle is produced, then the exterior angle is greater than either of the interior opposite angles.
-Any two angles of a triangle are together less than two right angles.
-Every triangle must have at least two acute angles.
-Only one perpendicular can be drawn to a straight line from a given point outside it.
-ABC is a triangle and D any point within it. If BD and CD are joined, the angle BDC is greater than the angle BAC. Prove this by producing BD to meet AC.
-ABC is a triangle and D any point within it. If BD and CD are joined, the angle BDC is greater than the angle BAC. Prove this by joining AD, and producing it towards the base.
-If any side of a triangle is produced both ways, the exterior angles so formed are together greater than two right angles.
-To a given straight line there cannot be drawn from a point outside it more than two straight lines of the same given length.
-If the equal sides of an isosceles triangle are produced, the exterior angles must be obtuse.
-If one side of a triangle is greater than another, then the angle opposite to the greater side is greater than the angle opposite to the lesser side.
-If one angle of a triangle is greater than another, then the side opposite to the greater angle is greater than the side opposite to the lesser angle.
-Any two sides of a triangle are together greater than the third side.
-The shortest distance between two points is the straight line which joins them.
-Of all straight lines drawn from a given point to a given straight line the perpendicular is the least.
-Of all straight lines drawn from a given point to a given straight line the perpendicular is the shortest.
-If OC is the shortest straight line from O to AB, then OC is perpendicular to AB.
-Two obliques OP, OQ, which cut AB at equal distances from C, the foot of the perpendicular, are equal.
-Of two obliques OQ, OR, if OR cuts AB at the greater distance from C, the foot of the perpendicular, then OR is greater than OQ.
-The hypotenuse is the greatest side of a right-angled triangle.
-The greatest side of any triangle makes acute angles with each of the other sides.
-If from the ends of a side of a triangle, two straight lines are drawn to a point within the triangle, then these straight lines are together less than the other two sides of the triangle.
-BC, the base of an isosceles triangle ABC, is produced to any point D. Show that AD is greater than either of the equal sides.
-If in a quadrilateral the greatest and least sides are opposite to one another, then each of the angles adjacent to the least side is greater than its opposite angle.
-In a triangle ABC, if AC is not greater than AB, show that any straight line drawn through the vertex A and terminated by the base BC, is less than AB.
-ABC is a triangle, in which OB, OC bisect the angles ABC, ACB respectively. Show that, if AB is greater than AC, then OB is greater than OC.
-The difference of any two sides of a triangle is less than the third side.
-The sum of the distances of any point from the three angular points of a triangle is greater than half its perimeter.
-ABC is a triangle, and the vertical angle BAC is bisected by a line which meets BC in X. Show that BA is greater than BX, and CA greater than CX.
-The sum of the distances of any point within a triangle from its angular points is less than the perimeter of the triangle.
-The sum of the diagonals of a quadrilateral is not greater than the sum of the four straight lines drawn from the angular points to any given point.
-In a triangle any two sides are together greater than twice the median which bisects the remaining side. Prove by producing the median.
-In any triangle the sum of the medians is less than the perimeter.
-The perimeter of a quadrilateral is greater than the sum of its diagnols.
+Two given points in the base of an isosceles triangle are equidistant from the extremities of the base. Show that they are also equidistant from the vertex.	isosceles_base_equidistant_points
+Show that the triangle formed by joining the middle points of the sides of an equilateral triangle is also equilateral.	equilateral_midpoints
+ABC is an isosceles triangle having AB equal to AC and the angles at B and C are bisected by BO and CO. Show that BO = CO.	something
+ABC is an isosceles triangle having AB equal to AC and the angles at B and C are bisected by BO and CO. Show that AO bisects the angle BAC.	something
+Show that the diagnols of a Rhombus bisect one another at right angles.	rhombus_diagnols_right_bisectors
+The equal sides BA, CA of an isosceles triangle BAC are produced beyond the vertex A to the points E and F, so that AE is equal to AF and FB, EC are joined. Show that FB is equal to EC.	isosceles_vertex_extension
+If one side of a triangle is produced, then the exterior angle is greater than either of the interior opposite angles.	triangle_exterior_angle
+ABC is a triangle. If the side AB is produced in one direction to X, then the exterior angle XCB is greater than either of the interior opposite angles ABC and BAC.	triangle_exterior_angle
+Any two angles of a triangle are together less than two right angles.	triangle_two_angles_right_angles.asy
+Every triangle must have at least two acute angles.	triangle_two_angles
+Only one perpendicular can be drawn to a straight line from a given point outside it.	perpendicular_from_point
+If AB is a straight line and O is a point outside AB then only one perpendicular can be drawn from O to AB.	perpendicular_from_point
+Only one perpendicular can be drawn from a point to a straight line not passing through that point.	perpendicular_from_point
+The perpendicular drawn from point O to the line AB is the shortest distance from O to AB.	perpendicular_from_point
+ABC is a triangle and D any point within it. If BD and CD are joined, the angle BDC is greater than the angle BAC. Prove this by producing BD to meet AC.	triangle_internal_interior_angle
+ABC is a triangle and D any point within it. If BD and CD are joined, the angle BDC is greater than the angle BAC. Prove this by joining AD, and producing it towards the base.	triangle_internal_interior_angle_1
+If any side of a triangle is produced both ways, the exterior angles so formed are together greater than two right angles.	triangle_exterior_right_angles
+ABC is a triangle. If BC is produced in both directions to X and Y, the exterior angles ABX and ACY are together greater than two right angles.	triangle_exterior_right_angles
+To a given straight line there cannot be drawn from a point outside it more than two straight lines of the same given length.	lines_from_point
+If the equal sides of an isosceles triangle are produced, the exterior angles must be obtuse.	isosceles_exterior_angles
+If one side of a triangle is greater than another, then the angle opposite to the greater side is greater than the angle opposite to the lesser side.	triangle_angles_sides_1
+If one angle of a triangle is greater than another, then the side opposite to the greater angle is greater than the side opposite to the lesser angle.	triangle_angles_sides_2
+Any two sides of a triangle are together greater than the third side.	triangle_ABC
+The shortest distance between two points is the straight line which joins them.	line_AB
+The shortest distance points A and B is the line AB.	line_AB
+Of all straight lines drawn from a given point to a given straight line the perpendicular is the least.	smallest_line_from_point
+Of all straight lines drawn from a given point to a given straight line the perpendicular is the shortest.	smallest_line_from_poin
+If OC is the shortest straight line from O to AB, then OC is perpendicular to AB.	perpendicular_from_point
+Two obliques OP, OQ, which cut AB at equal distances from C, the foot of the perpendicular, are equal.	obliques_and_perpendicular
+If OP and OQ are oblique lines from O to AB such that CP is equal to CQ where OC is the perpendicular from O to AB, then OP and OQ are also equal.	obliques_and_perpendicular
+Of two obliques OQ, OR, if OR cuts AB at the greater distance from C, the foot of the perpendicular, then OR is greater than OQ.	obliques_and_perpendicular_1
+The hypotenuse is the greatest side of a right-angled triangle.	right_triangle
+If ABC is a right triangle with angle ABC as the right angle, then AC is called the hypotenuse.	right_triangle
+If ABC is a right triangle with angle ABC as the right angle, then AC is the greatest side.	right_triangle
+The greatest side of any triangle makes acute angles with each of the other sides.	obtuse_triangle_acute_angles
+If from the ends of a side of a triangle, two straight lines are drawn to a point within the triangle, then these straight lines are together less than the other two sides of the triangle.	triangle_internal_point
+BC, the base of an isosceles triangle ABC, is produced to any point D. Show that AD is greater than either of the equal sides.	isosceles_base_extension
+If in a quadrilateral the greatest and least sides are opposite to one another, then each of the angles adjacent to the least side is greater than its opposite angle.	quadrilateral_sides_angles
+In a triangle ABC, if AC is not greater than AB, show that any straight line drawn through the vertex A and terminated by the base BC, is less than AB.	triangle_vertex_base
+ABC is a triangle, in which OB, OC bisect the angles ABC, ACB respectively. Show that, if AB is greater than AC, then OB is greater than OC.	something
+The difference of any two sides of a triangle is less than the third side.	triangle_ABC
+The sum of the distances of any point from the three angular points of a triangle is greater than half its perimeter.	triangle_internal_point_1
+ABC is a triangle, and the vertical angle BAC is bisected by a line which meets BC in X. Show that BA is greater than BX, and CA greater than CX.	something
+The sum of the distances of any point within a triangle from its angular points is less than the perimeter of the triangle.	triangle_internal_point_1
+The sum of the diagonals of a quadrilateral is not greater than the sum of the four straight lines drawn from the angular points to any given point.	something
+In a triangle any two sides are together greater than twice the median which bisects the remaining side. Prove by producing the median.	triangle_median_produced
+In any triangle the sum of the medians is less than the perimeter.	triangle_medians
+The perimeter of a quadrilateral is greater than the sum of its diagnols.	quadrilateral_diagnols_perimeter
 #parallels
-Lines in the same plane that do not meet however far they are produced beyond both ends are called parallel straight lines.
-Two intersecting straight lines cannot both be parallel to a third straight line.
-Through a given point there can be only one straight line parallel to a given straight line.
-When two straight lines AB, CD are met by a third straight line EF, eight angles are formed.
-When two straight lines AB, CD are crossed by a third straight line EF, eight angles are formed.
-When two straight lines AB, CD are intersected by a third straight line EF, eight angles are formed.
-When two straight lines AB, CD are met by a third straight line EF at points X and Y, angles AXE, EXB, CYF, FYD are called exterior angles.
-When two straight lines AB, CD are met by a third straight line EF at points X and Y, angles AXY, BXY, CYX, DYX are called interior angles.
+Lines in the same plane that do not meet however far they are produced beyond both ends are called parallel straight lines.	parallel_lines
+Two intersecting straight lines cannot both be parallel to a third straight line.	intersecting_parallel
+Through a given point there can be only one straight line parallel to a given straight line.	point_parallel_line
+When two straight lines AB, CD are met by a third straight line EF, eight angles are formed.	lines_eight_angles
+When two straight lines AB, CD are crossed by a third straight line EF, eight angles are formed.	lines_eight_angles
+When two straight lines AB, CD are intersected by a third straight line EF, eight angles are formed.	lines_eight_angles
+When two straight lines AB, CD are met by a third straight line EF at points X and Y, angles AXE, EXB, CYF, FYD are called exterior angles.	lines_exterior_angles
+When two straight lines AB, CD are met by a third straight line EF at points X and Y, angles AXY, BXY, CYX, DYX are called interior angles.	lines_interior_angles
 When two straight lines AB, CD are met by a third straight line EF at points X and Y, angles AXY, XYD are called alternate angles.
 When two straight lines AB, CD are met by a third straight line EF at points X and Y, angles BXY, XYC are called alternate angles.
 When two straight lines AB, CD are met by a third straight line EF at points X and Y, angle XYD is the interior opposite angle of angle EXB on the same side of EF.
@@ -282,9 +291,188 @@ A hexagon is equilateral if all its sides are equal.	equiangular_hexagon
 A hexagon is equiangular if all its angles are equal.	equiangular_hexagon
 A hexagon is regular when it is both equilateral and equiangular.	regular_hexagon
 ABCDEF is a regular hexagon.	regular_hexagon
+All the interior angles of any rectilineal figure, together with four right angles, are equal to twice as many right angles as the figure has sides.	something
+If the sides of a rectilineal figure, which has no re-entrant angle, are produced in order, then all the exterior angles so formed are together equal to four right angles.	something
+If one side of a regular hexagon is produced, show that the exterior angle is equal to the interior angle of an equilateral triangle.	something
+Express in degrees the magnitude of each exterior angle of 1. regular octagon,2. a regular decagon.
+How many sides has a regular polygon if each exterior angle is (i) 30°, (ii) 24°?	something
+If a straight line meets two parallel straight lines, and the two interior angles on the same side are bisected, show that the bisectors meet at right angles.
+If the base of any triangle is produced both ways, show that the sum of the two exterior angles mirius the vertical angle is equal to two right angles.
+In a triangle ABC the base angles at B and C are bisected by BO and CO respectively. Shew that the angle BOC = 90° + A/2
+In the triangle ABC, the sides AB, AC are produced, and the exterior angles are bisected by BO and CO. Show that the angle BOC 90° - A/2.
+The angle contained by the bisectors of two adjacent angles of a quadrilateral is equal to half the sum of the remaining angles.
+The straight line joining the middle point of the hypotenuse of a right-angled triangle to the right angle is equal to half the hypotenuse.
+If two triangles have two angles of one equal to two angles of the other, each to each, and any side of the first equal to the corresponding side of the other, the triangles are equal in all respects.
+Show that the perpendiculars drawn from the extremities of the base of an isosceles triangle to the opposite sides are equal.
+Any point on the bisector of an angle is equidistant from the arms of the angle.
+Through O, the middle point of a straight line AB, any straight line is drawn, and perpendiculars AX and BY are dropped upon it from A and B: show that AX is equal to BY.
+If the bisector of the vertical angle of a triangle is at right angles to the base, the triangle is isosceles.
+If in a triangle the perpendicular from vertex to the base bisects the base, then the triangle is isosceles.
+If the bisector of the vertical angle of triangle also bisects the base, the triangle is isosceles.
+The middle point of any straight line which meets two parallel straight lines, and is terminated by them, is equidistant from the parallels.
+A straight line drawn between two parallels, and terminated by them, is bisected. Show that any other straight line passing through the middle point and terminated by the parallels is also bisected at that point.
+If through a point equidistant from two parallel straight lines, two straight lines are drawn cutting the parallels, the portions of the latter thus intercepted are equal.
+Two right-angled triangles which have their hypotenuses equal, and one side of one equal to one side of the other, are equal in all respects.
+If two triangles have two sides of the one equal to two sides of the other, each to each, but the angle included by the two sides of one greater than the angle included by the corresponding sides of the other, then the base of that which has the greater angle is greater than the base of the other.
+If two triangles have two sides of the one equal to two sides of the other, each to each, but the base of one greater than the base of the other, then the angle contained by the sides of that which has the greater base is greater than the angle contained by the corresponding sides of the other.
+The perpendicular is the shortest line that can be drawn to a given straight line from a given point.
+Obliques which make equal angles with the perpendicular are equal.
+Of two obliques the less is that which ynakcs the smaller angle with the perpendicular.
+If two triangles have two sides of the one equal to two sides of the other, each to each, and have likewise the angles opposite to one pair of equal sides equal, then the angles opposite to the other pair of equal sides are either equal or supplementary, and in the former case the triangles are equal in all respects.
+#parallelograms
+A quadrilateral is a plane figure bounded by four straight lines.
+The straight line which joins opposite angular points in a quadrilateral is called a diagonal.
+A parallelogram is a quadrilateral whose opposite sides are parallel.
+A rectangle is a parallelogram whicli has one of its angles a right angle.
+A square is a rectangle which has two adjacent sides equal.
+A rhombus is a quadrilateral which has all its sides equal, but its angles are not right angles.
+A trapezium is a quadrilateral which has one pair of parallel sides.
+The straight lines which join the extremities of two equal and parallel straight lines towards the same parts are themselves equal and parallel.
+The opposite sides and angles of a parallelogram are equal to one another, and each diagonal bisects the parallelogram.
+If one angle of a parallelogram is a right angle, all its angles are right angles.
+All the angles of a rectangle are right angles.
+All the sides of a square are equal and all its angles are right angles.
+The diagonals of a 'parallelogram bisect one another.
+If the opposite sides of a quadrilateral are equal, the figure is a parallelogram.
+If the opposite angles of a quadrilateral are equal, the figure is a parallelogram.
+If the diagonals of a quadrilateral bisect each other, the figure is a parallelogram.
+The diagonals of a rhombus bisect one another at right angles.
+If the diagonals of a parallelogram are equal, all its angles are right angles.
+In a parallelogram which is not rectangular the diagonals are unequal.
+Prove that a rhombus is symmetrical about either diagonal.
+Prove that the diagonals of a square are the axes of symmetry.
+Prove that the lines joining the middle points of the opposite sides of a square are the axes of symmetry.
+The diagonals of a rectangle divide the figure into two congruent triangles, but the diagonals are not axes of symmetry.
+Prove that the lines joining the middle points of the opposite sides of a rectangle are the axes of symmetry.
+In a quadrilateral ABCD, AB = AD and CB = CD, but the sides are not all equal. Then the diagonal AC is an axis of symmetry.
+Two parallelograms are identically equal if two adjacent sides of one are equal to two adjacent sides of the other, each to each, and one angle of one equal to one angle of the other.
+Two rectangles are equal if two adjacent sides of one are equal to two adjacent sides of the other, each to each.
+Two quadrilaterals ABCD, EFGH have the sides AB, BC, CD, DA equal respectively to the sides EF, FG, GH, HE, and have also the angle BAD equal to the angle FEH. Show that the figures may be made to coincide with one another.
+Any straight line drawn through the middle point of a diagonal of a parallelogram and terminated by a pair of opposite sides, is bisected at that point.
+In a parallelogram the perpendiculars drawn from one pair of opposite angles to the diagonal which joins the other pair are equal.
+If ABCD is a parallelogram, and X, Y respectively the middle points of the sides AD, BC
+Show that the figure AYCX is a parallelogram.
+ABC and DEF are two triangles such that AB, BC are respectively equal to and parallel to DE, EF. Show that AC is equal and parallel to DF.
+ABCD is a quadrilateral in which AB is parallel to DC, and AD equal but not parallel to BC. Show that the diagonal AC = the diagonal BD;
+ABCD is a quadrilateral in which AB is parallel to DC, and AD equal but not parallel to BC. Show that the quadrilateral is symmetrical about the straight line joining the middle points of AB and DC.
+If there are three or more parallel straight lines, and the intercepts made by them on any transversal are equal, then the corresponding intercepts on any other transversal are also equal.
+In a triangle ABC, if a set of lines Pp, Qq, Rr, drawn parallel to the base, divide one side AB into equal parts, they also divide the other side AC into equal parts.
+If from the extremities of a straight hne AB perpendiculars AX, BY are drawn to a straight line PQ of indefinite length, then XY is said to be the orthogonal projection of AB on PQ.
+The straight line drawn through the middle point of a side of a triangle, parallel to the base, bisects the remaining side.
+In the triangle ABC, if Z is the middle point of AB, and ZF is drawn parallel to BC. Prove that AY = YC.
+The straight line which joins the middle points of two sides of a triangle is parallel to the third side.
+In the triangle ABC, if Z, Y are the middle points of AB, AC, prove ZY parallel to BC.
+In the triangle ABC, if Z, Y are the middle points of AB, AC, prove ZY parallel to BC by producing ZY to V, making YV equal to ZY, and joining CV then proving that triangle AYZ and triangle CYV are congruent.
+The straight line which joins the middle points of two sides of a triangle is equal to half the third side.
+Show that the three straight lines which join the middle points of the sides of a triangle, divide it into four congruent triangles.
+Any straight line drawn from the vertex of a triangle to the base is bisected by the line which joins the middle points of the other sides.
+ABCD is a parallelogram, and X, Y are the middle points of the opposite sides AD, BC. Show that BX and DY trisect AC.
+If the middle points of adjacent sides of any quadrilateral are joined, the figure thus formed is a parallelogram.
+Show that the straight lines which join the middle points of opposite sides of a quadrilateral, bisect one another.
+From, two points A and B, and from O the midpoint between them, perpendifuilars A P, BQ, OX are drawn to a straight line CD.
+When three parallel lines cut off equal intercepts from two transversals, show that of the three parallel lengths between the two transversals the middle one is the Arithmetic Mean of the other two.
+The parallel sides of a trapezium are a centimetres and b centimetres in length. Prove that the line joining the middle points of the oblique sides is parallel to the parallel sides, and that its length is 1/2(a + b) centimetres.
+OX and OY are two straight Unes, and along OA' five points 1, 2, 3, 4, 5 are marked at equal distances. Through these points parallels are drawn in any direction to meet OY. Measure the lengths of these parallels: take their average, and compare it with the length of the third parallel. Prove geometrically that the 3rd parallel is the mean of all five.
+From the angular points of a parallelogram perpendiculars are drawn to any straight line which is outside the parallelogram. Show that the sum of the perpendiculars drawn from one pair of opposite angular points is equal to the sum of those drawn from the other pair. Draw the diagonals, and from their point of intersection suppose a perpendicular drawn to the given straight line.
+The sum of the perpendiculars drawn from any point in the base of an isosceles triangle to the equal sides is equal to the perpendicular drawn from either extremity of the base to the opposite side.
+The sum of the distances of any point in the base of an isosceles triangle from the equal sides is constant, that is, the same whatever point in the base is taken.
+The difference of the perpendiculars drawn from any point on the base produced of an isosceles triangle to the equal sides is equal to the perpendicular drawn from either extremity of the base to the opposite side.
+The sum of the distances of any point in the base produced of an isosceles triangle from the equal sides is constant, that is, the same whatever point in the produced base is taken.
+The sum of the perpendiculars drawn from any point within an equilateral triangle to the three sides is equal to the perpendicular drawn from any one of the angular points to the opposite side, and is therefore constant.
+Equal and parallel lines have equal projections on any other straight hne.
+#circles
+A radius of a circle is a straight line drawn from the centre to the circumference.
+All the radii of a circle are equal.
+Any two radii of a circle are equal.
+If OA and OB are two radii of a circle, then they are equal.
+A diameter of a circle is a straight line drawn through the centre and terminated both ways by the circumference.
+A semi-circle is the figure-bounded by a diameter of a circle and the part of the circumference cut off by the diameter.
+Circles that have the same centre are said to be concentric.
+A circle is a closed curve so that if the circumference is crossed by a straight line, this line if produced will cross the circumference at a second point.
+The distance of a point from the centre of a circle is greater or less than the radius according as the point is without or within the circumference.
+A point is outside or inside a circle according as its distance from the centre is greater or less than the radius.
+Circles of equal radii are identically equal.
+Concentric circles of unequal radii cannot intersect.
+If the circumferences of two circles have a common point they cannot have the same centre, unless they coincide altogether.
+An arc of a circle is any part of the circumference.
+A chord of a circle is a straight line, joining any two points on the circumference.
+A chord of a circle, which does not pass through the centre, divides the circumference into two unequal arcs. Of these, the greater is called the major arc, and the less minor arc.
+The major arc is greater, and the minor arc less than the semi-circumference.
+The major and minor arcs, into which a circumferenee is divided by a chord, are said to be conjugate to one another.
+Let AB be a straight line and P a point outside it. From P draw PM perpendicular to AB, and produce it to Q, making MQ equal to PM. The points P and Q are said to be symmetrically opposite with regard to the axis AB, and each point is said to be the image of the other in the axis.
+A point and its image are equidistant from every point on the axis.
+A circle is symmetncal about any diameter.
+A circle has O as the center and AB as any diameter. Prove that the circle is symmetrical about AB.
+If a circle passes through a given point P, it also passes through the symmetrically opposite point with regard to any diameter.
+In equal circles angles at the centre lohich stand on equal arcs are equal.
+In equal circles arcs which subtend equal angles at the centre are equal.
+In equal circles arcs which are cut off by equal chords are equal, the major arc to the major and the minor arc to the minor.
+In equal circles chords which cut off equal arcs are equal.
+In equal circles sectors which have equal angles are equal.
+If a straight line drawn from the center of a circle bisects a chord which does not pass through the center, it cuts the chord at right angles.
+If a straight line drawn from the center of a circle cuts the chord at right angles, which does not pass through the center, it bisects the chord.
+Let ABC be a circle whose centre is O and let OD bisect a chord AB which does not pass through the centre. Prove that OD is perpendicular to AB.
+The straight line which bisects a chord at right angles passes through the centre.
+A straight line cannot meet a circle at more than two points.
+A chord of a circle lies wholly within it.
+One circle, and only one, can pass through any three points not in the same straight line.
+The size and position of a circle are fully determined if three of its points are known.
+Two circles cannot cut one another in more than two points without coinciding entirely.
+One circle passes through the vertices of any triangle.
+The circle passing through the vertices of a triangle is said to be circumscribed about the triangle. The circle, its centre, and its radius are called the circumcircle,the circumcenter,and the circumradius of the triangle.
+The parts of a straight line intercepted between the circumferences of two concentric circles are equal.
+Two circles, whose centres are at A and B, intersect at C, D and M is the middle point of the common chord. Show that AM and BM are in the same straight line. Hence prove that the line of centres bisects the common chord at right angles.
+AB, AC are two equal chords of a circle, show that the straight line which bisects the angle BAC passes through the centre.
+Find the locus of the centres of all circles which pass through two given points.
+Describe a circle that shall pass through two given points and have its centre in a given straight line.
+Describe a circle of given radius to pass through two given points.
+If from a point within a circle more than two equal straight lines can he drawn to the circumference, that point is the centre of the circle.
+Let ABC be a circle, and a point within it from which more than two equal straight lines are drawn to the circumference, namely OA,OB,OC. It is required to prove that is the centre of the circle ABC.
+Equal chords of a circle are equidistant from the centre.
+Chords which are equidistant from the centre are equal.
+Find the locus of the middle points of equal chords of a circle.
+If two chords of a circle cut one another, and make equal angles with the straight line which joins their point of intersection to the centre, they are equal.
+If two equal chords of a circle intersect, show that the segments of the one are equal respectively to the segments of the other.
+In a given circle draw a chord which shall be equal to one given straight line (not greater than the diameter) and parallel to another.
+PQ is a fixed chord in a circle, and AB is any diameter. Show that the sum or difference of the perpendiculars let fall from A and B on PQ is the same for all positions of AB.
+Of any two chords of a circle, that which is nearer to the center is greater than one more remote.
+The greater of two chords is nearer to the centre than the less.
+The greatest chord in a circle is a diameter.
+Through a given point within a circle draw the least possible chord.
+The angle at the centre of a circle is double of an angle at the circumference standing on the same arc.	theorem_39
+A segment of a circle is the figure bounded by a chord and one of the two arcs into which the chord divides the circumference.
+The chord of a segment is called its base.
+An angle in a segment is one formed by two straight lines drawn from any point in the arc of the segment to the extremities of its chord.
+If four or more points are so placed that a circle may be drawn through them, they are said to be concyclic.
+All circles which pass through a fixed point, and have their centres on a given straight line, pass also through a second fixed point.
+If two circles which intersect are cut by a straight line parallel to the common chord, show that the parts of it intercepted between the circumferences are equal.
+If two circles cut one another, any two parallel straight lines drawn through the points of intersection to cut the circles are equal.
+If two circles cut one another, any two straight lines drawn through a point of section, making equal angles with the common chord, and terminated by the circumferences, are equal.
+Find the greatest and least straight linos which have one extremity on each of two given non-intersecting circles.
+If from any point on the circumference of a circle straight lines are drawn to the circumference, the greatest is that which passes through the centre and of any two such lines the greater is that which subtends the greater angle at the centre.
+Of all straight lines drawn through a point of intersection of two circles and terminated by the circumferences, the greatest is that which is parallel to the line of centres.
+If from any internal point, not the centre, straight lines are drawn to the circumference of a circle, then the greatest is that which passes through the centre, and the least is the remaining part of that diameter and of any other two such lines the greater is that which subtends the greater angle at the centre.
+If from any external point straight lines are drawn to the circumference of a circle, the greatest is that which passes through the centre, and the least is that which when produced passes through the centre; and of any other two such lines, the greater is that which subtends the greater angle at the centre.
+Prove that the angle in a semicircle is a right angle.
+The angle in, a segment of a circle greater than a semicircle is an acute angle.
+The angle in a segment of a circle less than a semicircle is an obtuse angle.
+A circle described on the hypotenuse of a right triangle as diameter, passes through the opposite angular point.
+Two circles intersect at A and B and through A two diameters AP, AQ are drawn, one in each circle. Show that the points P, B, Q are collinear.
+A circle is described on one of the equal sides of an isosceles triangle as diameter. Show that it passes through the middle point of the base.
+Circles described on any two sides of a triangle as diameters intersect on the third side, or the third side produced.
+Find the locus of the middle points of chords of a circle drawn through a fixed point, when the given point is within the circumference.
+Find the locus of the middle points of chords of a circle drawn through a fixed point, when the given point is on the circumference.
+Find the locus of the middle points of chords of a circle drawn through a fixed point, when the given point is without the circumference.
+If two chords intersect within a circle, they form an angle equal to that at the centre, subtended by half the sum of the arcs they cut off.
+If two chords intersect without a circle, they form an angle equal to that at the centre subtended by half the difference of the arcs they cut off.
+The sum of the arcs cut off by two chords of a circle at right angles to one another is equal to the semi circumference.
 
 
-Corrolary 1 after theorem 16
+theorem_40
+A sector of a circle is a figure bounded by two radii and the arc intercepted between them.
+
+
+
 
 
 
@@ -306,10 +494,31 @@ Add examples for the following concepts
 	opposite side of vertex
 	opposite sides
 	greater than lesser than
-	oblique
+	oblique vs slanted
 	shortest vs least
 	polygon vs rectilinear figure
+	extended vs produced
+	= vs equal to
+	distance vs path
+	not greater vs lesser
+	angular points vs vertices
+	center vs centre
+	lesser vs less
+	right-angled triangle vs right triangle
+	add a space after semi: semi circle, semi circumference, hemi sphere
+	hemi vs semi
 
 Check shew Shew is not present in the data. is should be show Show.
-Make examples from Numerical exercizes on page 27 before theorem 8, exercizes on theorem 16 page 43. except 7 and 8
 
+Numerical examples
+Can make examples from Numerical exercizes on page 27 before theorem 8, exercizes on theorem 16 page 43. except 7 and 8
+
+Left out Revision lession on triangles pg 54
+Left out some numerical questions on pg Misc Example on 55
+Left out some numerical questions on pg Misc Example on 61 before theorem 22
+Left out some numerical questions on pg 149 before theorem 35
+Left out some numerical questions on pg 153 before theorem 37
+Left out some graphical questions on pg 155 before theorem 38
+Left out some graphical questions on pg 157 before theorem 39
+Left out some numerical (in misc) questions on pg 160
+Left out diagnol scales, complete part 2 and practical geometry and loci

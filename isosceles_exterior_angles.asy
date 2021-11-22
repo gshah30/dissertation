@@ -21,5 +21,5 @@ draw(C -- A, single_central_marker);
 draw(B -- E);
 draw(C -- F);
 
-markangle(E, B, C, radius=30, n=2);
-markangle(F, C, B, radius=-30, n=2);
+markangle(E, B, C, radius=30, n=2, light_pen);
+markangle(F, C, B, radius=-30, n=2, light_pen);

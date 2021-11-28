@@ -436,36 +436,42 @@ If two equal chords of a circle intersect, show that the segments of the one are
 In a given circle draw a chord which shall be equal to one given straight line (not greater than the diameter) and parallel to another.
 PQ is a fixed chord in a circle, and AB is any diameter. Show that the sum or difference of the perpendiculars let fall from A and B on PQ is the same for all positions of AB.
 Of any two chords of a circle, that which is nearer to the center is greater than one more remote.
-The greater of two chords is nearer to the centre than the less.
-The greatest chord in a circle is a diameter.
-Through a given point within a circle draw the least possible chord.
-The angle at the centre of a circle is double of an angle at the circumference standing on the same arc.	theorem_39
-A segment of a circle is the figure bounded by a chord and one of the two arcs into which the chord divides the circumference.
-The chord of a segment is called its base.
-An angle in a segment is one formed by two straight lines drawn from any point in the arc of the segment to the extremities of its chord.
-If four or more points are so placed that a circle may be drawn through them, they are said to be concyclic.
-All circles which pass through a fixed point, and have their centres on a given straight line, pass also through a second fixed point.
-If two circles which intersect are cut by a straight line parallel to the common chord, show that the parts of it intercepted between the circumferences are equal.
-If two circles cut one another, any two parallel straight lines drawn through the points of intersection to cut the circles are equal.
-If two circles cut one another, any two straight lines drawn through a point of section, making equal angles with the common chord, and terminated by the circumferences, are equal.
-Find the greatest and least straight linos which have one extremity on each of two given non-intersecting circles.
-If from any point on the circumference of a circle straight lines are drawn to the circumference, the greatest is that which passes through the centre and of any two such lines the greater is that which subtends the greater angle at the centre.
-Of all straight lines drawn through a point of intersection of two circles and terminated by the circumferences, the greatest is that which is parallel to the line of centres.
-If from any internal point, not the centre, straight lines are drawn to the circumference of a circle, then the greatest is that which passes through the centre, and the least is the remaining part of that diameter and of any other two such lines the greater is that which subtends the greater angle at the centre.
-If from any external point straight lines are drawn to the circumference of a circle, the greatest is that which passes through the centre, and the least is that which when produced passes through the centre; and of any other two such lines, the greater is that which subtends the greater angle at the centre.
-Prove that the angle in a semicircle is a right angle.
-The angle in, a segment of a circle greater than a semicircle is an acute angle.
-The angle in a segment of a circle less than a semicircle is an obtuse angle.
-A circle described on the hypotenuse of a right triangle as diameter, passes through the opposite angular point.
-Two circles intersect at A and B and through A two diameters AP, AQ are drawn, one in each circle. Show that the points P, B, Q are collinear.
-A circle is described on one of the equal sides of an isosceles triangle as diameter. Show that it passes through the middle point of the base.
-Circles described on any two sides of a triangle as diameters intersect on the third side, or the third side produced.
-Find the locus of the middle points of chords of a circle drawn through a fixed point, when the given point is within the circumference.
-Find the locus of the middle points of chords of a circle drawn through a fixed point, when the given point is on the circumference.
-Find the locus of the middle points of chords of a circle drawn through a fixed point, when the given point is without the circumference.
-If two chords intersect within a circle, they form an angle equal to that at the centre, subtended by half the sum of the arcs they cut off.
-If two chords intersect without a circle, they form an angle equal to that at the centre subtended by half the difference of the arcs they cut off.
-The sum of the arcs cut off by two chords of a circle at right angles to one another is equal to the semi circumference.
+The greater of two chords is nearer to the centre than the less.	greater_chord_distance
+The greatest chord in a circle is a diameter.	diameter
+Through a given point within a circle draw the least possible chord.	point_smallest_chord
+The angle at the centre of a circle is double of an angle at the circumference standing on the same arc.	theorem_39_center_circum_angle
+A segment of a circle is the figure bounded by a chord and one of the two arcs into which the chord divides the circumference.	circle_segment
+The chord of a segment is called its base.	segment_base
+An angle in a segment is one formed by two straight lines drawn from any point in the arc of the segment to the extremities of its chord.	segment_angle
+If four or more points are so placed that a circle may be drawn through them, they are said to be concyclic.	concyclic_points
+All circles which pass through a fixed point, and have their centres on a given straight line, pass also through a second fixed point.	fixed_point_circle_fixed_line_center
+If two circles which intersect are cut by a straight line parallel to the common chord, show that the parts of it intercepted between the circumferences are equal.	intersecting_circles_intercepted_parallel_line
+If two circles cut one another, any two parallel straight lines drawn through the points of intersection to cut the circles are equal.	intersecting_circles_parallel_lines
+If two circles cut one another, any two straight lines drawn through a point of section, making equal angles with the common chord, and terminated by the circumferences, are equal.	exception
+Find the greatest straight line which has one extremity on each of two given non-intersecting circles.	non_intersecting_circles_connecting_line_1
+Find the least straight line which has one extremity on each of two given non-intersecting circles.	non_intersecting_circles_connecting_line_2
+If from any point on the circumference of a circle straight lines are drawn to the circumference, the greatest is that which passes through the centre.	circle_fixed_circum_point_chords_1
+If from any point on the circumference of a circle straight lines are drawn to the circumference, then of any two such lines the greater is that which subtends the greater angle at the centre.	circle_fixed_circum_point_chords_2
+Of all straight lines drawn through a point of intersection of two circles and terminated by the circumferences, the greatest is that which is parallel to the line of centres.	intersection_circles_greatest_line
+If from any internal point, not the centre, straight lines are drawn to the circumference of a circle, then the greatest is that which passes through the centre and the least is the remaining part of that diameter.	circle_fixed_point_chords
+If from any internal point, not the centre, straight lines are drawn to the circumference of a circle then of any two such lines the greater is that which subtends the greater angle at the center.	circle_fixed_point_chords_1
+If from any external point straight lines are drawn to the circumference of a circle, the greatest is that which passes through the centre, and the least is that which when produced passes through the centre	circle_fixed_point_chords_2
+If from any external point straight lines are drawn to the circumference of a circle then of any other two such lines, the greater is that which subtends the greater angle at the centre.	circle_fixed_point_chords_3
+Prove that the angle in a semicircle is a right angle.	semi_circle_right_angle
+The angle in, a segment of a circle greater than a semicircle is an acute angle.	major_segment_acute_angle
+The angle in a segment of a circle less than a semicircle is an obtuse angle.	minor_segment_obtuse_angle
+A circle described on the hypotenuse of a right triangle as diameter, passes through the opposite angular point.	right_triangle_hypotenuse_circle
+Two circles intersect at A and B and through A two diameters AP, AQ are drawn, one in each circle. Show that the points P, B, Q are collinear.	intersecting_circles_collinear
+A circle is described on one of the equal sides of an isosceles triangle as diameter. Show that it passes through the middle point of the base.	isosceles_side_circle
+Circles described on any two sides of a triangle as diameters intersect on the third side, or the third side produced.	triangle_sides_circles
+Find the locus of the middle points of chords of a circle drawn through a fixed point, when the given point is within the circumference.	chord_midpoint_fixed_point
+Find the locus of the middle points of chords of a circle drawn through a fixed point, when the given point is on the circumference.	chord_midpoint_fixed_circum_point
+Find the locus of the middle points of chords of a circle drawn through a fixed point, when the given point is without the circumference.	chord_midpoint_fixed_outside_point
+If two chords intersect within a circle, they form an angle equal to that at the centre, subtended by half the sum of the arcs they cut off.	something
+If two chords intersect without a circle, they form an angle equal to that at the centre subtended by half the difference of the arcs they cut off.	something
+The sum of the arcs cut off by two chords of a circle at right angles to one another is equal to the semi circumference.	chords_right_angles_semi_circum
+
+
 
 
 theorem_40
@@ -507,6 +513,7 @@ Add examples for the following concepts
 	right-angled triangle vs right triangle
 	add a space after semi: semi circle, semi circumference, hemi sphere
 	hemi vs semi
+	what is point of section
 
 Check shew Shew is not present in the data. is should be show Show.
 

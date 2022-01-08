@@ -1,11 +1,12 @@
-#!/bin/ruby
-require "open3"
+#!/bin/ruby -W0
 require "logger"
 require "csv"
-
+require "etc"
+require "set"
 require "colorize"
 
 START_TIME = Time.now
+PSEUDO_MIN = 100
 
 $logger = Logger.new STDOUT
 $logger.level = Logger::DEBUG
@@ -14,13 +15,12 @@ $logger.formatter = proc {|severity, datetime, progname, msg| "#{severity}: #{pr
 def exit_gracefully status = 0
   exit status
 rescue SystemExit => e
-  $logger.info(__method__) { "Time taken: #{Time.now - START_TIME}".green }
+  $logger.info(__method__) { "Time taken: #{Time.now - START_TIME}".blue }
   raise e
 end
 
 module Infra
   OUTPUT_FORMAT = "png".freeze
-
 
   module_function
 
@@ -134,7 +134,7 @@ module Infra
       exit_gracefully
     end
 
-    actors = files_to_build.group_by.with_index{|_,i| i % 8}.map do |id, batch|
+    actors = files_to_build.group_by.with_index{|_,i| i % Etc.nprocessors}.map do |id, batch|
       $logger.info(__method__) { "Processing batch: Id => #{id}; Size => #{batch.size}" }
 
       Ractor.new(id, batch, Infra) do |id, batch, infra|
@@ -149,7 +149,7 @@ module Infra
           Ractor.yield({type: :error, id: id, batch: batch, convert_output: convert_output}) unless status == 0
         end if status == 0
 
-        {type: :info, id: id, message: "success: #{batch}", compile_output: compile_output, convert_output: cumulative_convert_output}
+        {type: :info, id: id, message: "success", compile_output: compile_output, convert_output: cumulative_convert_output}
       end
     end
 
@@ -157,7 +157,11 @@ module Infra
       a, result = Ractor.select *actors
       actors.delete a
 
-      $logger.send result[:type], result.to_s.send(result[:type] == :error ? :red : :green)
+      if result[:type] == :error
+        $logger.error result.to_s.red
+      else
+        $logger.info result
+      end
     end
 
     # $logger.info(__method__) { "Removing eps files." }
@@ -190,17 +194,24 @@ module Infra
 
   def inspect range = nil, is_dry = false
     missing_images = []
-    missing_images_details = proc {|missing_images| "Following images were not found: #{missing_images}" }
+    missing_images_message = proc do |missing_images|
+      if missing_images.count > 0
+        missing_image_line_nos = missing_images.map(&:first)
+        "Following #{missing_image_line_nos.count} images were not found: #{missing_image_line_nos}".red
+      else
+        "All images present!".green
+      end
+    end
 
     File.open "./statements.tsv" do |f|
       CSV.parse(f, col_sep: "\t").each_with_index do |r, i|
 
         if range.nil? || range === i
-          if r.length != 2
+          if r.length != 2 && !r&.[](0)&.start_with?("#")
             missing_images << [i+1, nil]
-            $logger.error missing_images_details.call(missing_images).red
+            # $logger.error(__method__) {missing_images_message.call missing_images}
 
-            exit_gracefully 1
+            # exit_gracefully 1
           else
             $logger.info(__method__) { "#{i+1} => #{r.first}" }
 
@@ -215,7 +226,7 @@ module Infra
       end
     end
 
-    $logger.error missing_images_details.call(missing_images).red
+    $logger.error(__method__) {missing_images_message.call(missing_images)}
   end
 
   def view images
@@ -226,9 +237,71 @@ module Infra
       run "feh #{image}.png --image-bg white"
     end
   end
+
+  def gen_clean_data
+    missing_images = []
+    missing_images_message = proc do |missing_images|
+      if missing_images.count > 0
+        "#{missing_images.size} images were not found!".red
+      else
+        "All images present!".green
+      end
+    end
+
+    written_count = 0
+
+    File.open "./statements.tsv" do |f|
+      CSV.parse(f, col_sep: "\t").each_with_index do |r, i|
+
+        if r.length != 2
+          missing_images << [i+1, nil]
+          next
+        else
+          if `ls #{r.last}.png 2>&1`.include? "No such file or directory"
+            missing_images << [i+1, r.last]
+          else
+            written_count += 1
+            File.write("data.tsv.new", "#{r[0]}\t#{r[1]}\n", mode: "a")
+          end
+        end
+      end
+    end
+
+    $logger.error(__method__) {missing_images_message.call(missing_images)}
+    $logger.info(__method__) {"Examples written: #{written_count}"}
+
+    File.rename "data.tsv", "data.tsv.bak" if File.exist? "data.tsv"
+    File.rename "data.tsv.new", "data.tsv"
+  end
+
+  def stats
+    File.open "./statements.tsv" do |f|
+      stats = CSV.parse(f, col_sep: "\t").reduce({max: 0, min: PSEUDO_MIN, sum: 0, count: 0, vocab: Set.new}) do |stats, r|
+        stats.tap do |stats|
+          if r.size > 1 && !r.first.nil?
+            words = r.first[..-2].split(" ").flat_map{|w| w == " " ? nil : w}
+            len = words.size
+
+            stats[:min] = len if stats[:min] > len
+            stats[:max] = len if stats[:max] < len
+            stats[:sum] += len
+            stats[:count] += 1
+
+            stats[:vocab].merge words.map{|w| /[A-Z]+/.match(w) ? w : w.downcase}
+          end
+        end
+      end
+
+      stats[:avg] = stats[:sum]/stats[:count]
+
+      stats[:vocab_size] = stats[:vocab].size
+      $logger.info(__method__) {stats.except(:sum, :count, :vocab).to_s.green}
+    end
+  end
+
 end
 
-ALLOWED_ACTIONS = [:clean, :build, :rebuild, :inspect, :view, :dry_inspect, :pbuild, :prebuild]
+ALLOWED_ACTIONS = [:clean, :build, :rebuild, :inspect, :view, :dry_inspect, :pbuild, :prebuild, :gen_clean_data, :stats]
 
 action = ARGV[0].to_sym
 unless ALLOWED_ACTIONS.include? action

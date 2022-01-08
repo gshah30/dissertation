@@ -43,9 +43,9 @@ markangle(A, O1, F, radius=17);
 
 pair O2 = intersectionpoint(extend(l2), extend(lp));
 
-markangle(C, O2, E, radius=-20, n=2, p=thick_pen);
-markangle(F, O2, D, radius=20, n=2, p=thick_pen);
+markangle(C, O2, E, radius=-20, n=2, p=thick_pen_2);
+markangle(F, O2, D, radius=20, n=2, p=thick_pen_2);
 
-// defaultpen(thick_pen);
-markangle(D, O2, E, radius=17, p=thick_pen);
-markangle(C, O2, F, radius=17, p=thick_pen);
+// defaultpen(thick_pen_2);
+markangle(D, O2, E, radius=17, p=thick_pen_2);
+markangle(C, O2, F, radius=17, p=thick_pen_2);
